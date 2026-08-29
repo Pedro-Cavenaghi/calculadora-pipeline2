@@ -1,0 +1,36 @@
+name: Pipeline CI - Node.js Qualidade e Seguranca
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  qualidade:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar Codigo do Repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Ambiente Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar Dependencias
+        run: npm install
+
+      - name: Analise Estatica (Linter)
+        run: npm run lint
+
+      - name: Testes Unitarios e Cobertura Minima
+        run: npm test
+
+      - name: Analise de Seguranca (Gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
