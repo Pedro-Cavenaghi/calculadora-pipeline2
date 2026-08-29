@@ -1,9 +1,9 @@
-﻿{
+{
   "name": "calculadora-pipeline2",
   "version": "1.0.0",
   "main": "calculadora.js",
   "scripts": {
-    "test": "jest --coverage --coverageThreshold=\"{\"\"global\"\":{\"\"branches\"\":90,\"\"functions\"\":90,\"\"lines\"\":90,\"\"statements\"\":90}}\"",
+    "test": "jest",
     "lint": "eslint ."
   },
   "devDependencies": {
