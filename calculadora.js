@@ -1,5 +1,3 @@
-const variavelInutil = 99;
-
 function soma(a, b) {
   return a + b;
 }
