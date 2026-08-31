@@ -9,14 +9,14 @@ test('deve subtrair dois numeros corretamente', () => {
 });
 
 test('deve multiplicar dois numeros corretamente', () => {
-  expect(multiplica(4, 3)).toBe(12);
+  expect(multiplica(3, 4)).toBe(12);
 });
 
 test('deve dividir dois numeros corretamente', () => {
   expect(divide(10, 2)).toBe(5);
 });
 
-test('deve lancar erro ao tentar dividir por zero', () => {
+test('deve lancar erro ao dividir por zero', () => {
   expect(() => divide(10, 0)).toThrow('Divisao por zero nao e permitida');
 });
 
@@ -26,4 +26,8 @@ test('deve calcular a potencia corretamente', () => {
 
 test('deve calcular a raiz quadrada corretamente', () => {
   expect(raizQuadrada(9)).toBe(3);
+});
+
+test('deve lancar erro ao calcular raiz quadrada de numero negativo', () => {
+  expect(() => raizQuadrada(-9)).toThrow('Nao e possivel calcular raiz de numero negativo');
 });
