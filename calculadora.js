@@ -17,4 +17,15 @@ function divide(a, b) {
   return a / b;
 }
 
-module.exports = { soma, subtrai, multiplica, divide };
+function potencia(base, expoente) {
+  return Math.pow(base, expoente);
+}
+
+function raizQuadrada(numero) {
+  if (numero < 0) {
+    throw new Error('Nao e possivel calcular raiz de numero negativo');
+  }
+  return Math.sqrt(numero);
+}
+
+module.exports = { soma, subtrai, multiplica, divide, potencia, raizQuadrada };
