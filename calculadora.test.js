@@ -1,7 +1,7 @@
 const { soma, subtrai, multiplica, divide } = require('./calculadora');
 
 test('deve somar dois numeros corretamente', () => {
-  expect(soma(2, 3)).toBe(5);
+  expect(soma(2, 3)).toBe(99);
 });
 
 test('deve subtrair dois numeros corretamente', () => {
