@@ -1,4 +1,4 @@
-const { soma, subtrai, multiplica, divide } = require('./calculadora');
+const { soma, subtrai, multiplica, divide, potencia, raizQuadrada } = require('./calculadora');
 
 test('deve somar dois numeros corretamente', () => {
   expect(soma(2, 3)).toBe(5);
@@ -18,4 +18,12 @@ test('deve dividir dois numeros corretamente', () => {
 
 test('deve lancar erro ao tentar dividir por zero', () => {
   expect(() => divide(10, 0)).toThrow('Divisao por zero nao e permitida');
+});
+
+test('deve calcular a potencia corretamente', () => {
+  expect(potencia(2, 3)).toBe(8);
+});
+
+test('deve calcular a raiz quadrada corretamente', () => {
+  expect(raizQuadrada(9)).toBe(3);
 });
